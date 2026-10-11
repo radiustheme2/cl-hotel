@@ -1,0 +1,16 @@
+<wpml-config>
+	<admin-texts>
+		<key name="header_main_section">
+			<key name="header_btn_txt" />
+		</key>
+		<key name="footer_section">
+			<key name="cta_text" />
+			<key name="cta_btn_txt" />
+			<key name="about_text" />
+			<key name="copyright_text" />
+		</key>
+		<key name="contact_info_section">
+			<key name="contact_address" />
+		</key>
+	</admin-texts>
+</wpml-config>

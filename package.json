@@ -1,0 +1,7 @@
+{
+  "name": "clhotel",
+  "private": true,
+  "scripts": {
+    "zip": "node scripts/zip.js"
+  }
+}
