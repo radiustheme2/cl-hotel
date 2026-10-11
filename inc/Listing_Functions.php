@@ -84,6 +84,11 @@ class Listing_Functions {
 		add_filter( 'rtcl_store_get_ad_count_html', [ $this, 'agency_grid_columns_class' ], 10, 3 );
 		add_filter( 'rtcl_bootstrap_dequeue', '__return_false' );
 
+		// Elementor listing widgets: keep the card and action button borders the theme templates are designed with
+		add_filter( 'el_widget_listing_wrapper_settings_fields', [ $this, 'el_listing_border_defaults' ] );
+		add_filter( 'rtcl_el_listing_slider_widget_item_wrapper_style_field', [ $this, 'el_listing_border_defaults' ] );
+		add_filter( 'rtcl_el_listing_slider_widget_button_style_field', [ $this, 'el_listing_border_defaults' ] );
+
 		//CF Form Migration
 		add_action( 'rtcl_fb_cf_data_migration', [ $this, 'rtcl_fb_cf_data_migration' ] );
         add_filter( 'rtcl_force_classic_style', '__return_true' );
@@ -98,6 +103,46 @@ class Listing_Functions {
 
 	public function theme_support() {
 		add_theme_support( 'rtcl' );
+	}
+
+	/**
+	 * Default 1px borders for the listing card and the grid style 5 action buttons.
+	 *
+	 * @param array $fields Elementor widget control fields.
+	 *
+	 * @return array
+	 */
+	public function el_listing_border_defaults( $fields ) {
+		$border_colors = [
+			'rtcl_listing_border'      => 'rgba(0, 0, 0, 0.05)',
+			'rtcl_button_border_color' => '#e1e1e1',
+		];
+
+		foreach ( $fields as $key => $field ) {
+			if ( ! isset( $field['id'], $border_colors[ $field['id'] ] ) ) {
+				continue;
+			}
+
+			$fields[ $key ]['fields_options'] = [
+				'border' => [
+					'default' => 'solid',
+				],
+				'width'  => [
+					'default' => [
+						'top'      => '1',
+						'right'    => '1',
+						'bottom'   => '1',
+						'left'     => '1',
+						'isLinked' => false,
+					],
+				],
+				'color'  => [
+					'default' => $border_colors[ $field['id'] ],
+				],
+			];
+		}
+
+		return $fields;
 	}
 
 	public function rtcl_action_hook() {

@@ -9939,6 +9939,291 @@ footer ul li {
 	font-weight: 700;
 }
 
+/* Elementor listing grid style 2, 3, 5 — card styles formerly shipped by Classified Listing Toolkits */
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .listing-thumb img,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .listing-thumb img {
+    transition: all .3s ease-out;
+    transform: scale(1);
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .category,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .category {
+    margin-bottom: 6px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .item-price,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .item-price {
+    margin-bottom: 8px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .listing-item:hover .listing-thumb img,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .listing-item:hover .listing-thumb img {
+    transform: scale(1.07);
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .listing-thumb>a:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    transition: all .3s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.4);
+    z-index: 1;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .listing-item .listing-title {
+    margin-bottom: 0;
+    vertical-align: middle;
+    display: inline;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .listing-item:hover .listing-thumb a:before {
+    opacity: 1;
+    visibility: initial;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .rtcl-listing-meta-data {
+    margin-bottom: 3px;
+    margin-top: 10px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .listing-thumb .item-price,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .listing-thumb .item-price {
+    background-color: var(--rtcl-primary-color);
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    padding: 5px 10px 5px 27px;
+    z-index: 1;
+    text-align: right;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 20px 50%);
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .favourite-label,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .favourite-label {
+    display: none;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .rtin-phn,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .rtin-fav,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom .rtin-phn,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom .rtin-fav {
+    flex: 0 0 auto;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .rtin-el-button a,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom .rtin-el-button a {
+    border-radius: 2px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .listing-item .listing-title {
+    font-size: 20px;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .listing-thumb {
+    line-height: 0;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtcl-listing-meta-data {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-el-button {
+    margin-top: 5px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtcl-short-description {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom {
+    flex-wrap: wrap;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom.button-count-2 .rtin-phn.rtin-el-button {
+    flex: 1;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom.button-count-3 .rtin-fav,
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view .rtin-bottom.button-count-4 .rtin-fav {
+    flex: 1;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view i.rtcl-icon-phone {
+    font-size: 17px;
+    line-height: 1;
+    padding-right: 3px;
+    display: inline-block;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-3-view i.rtcl-icon-phone:before {
+    transform: rotate(-90deg);
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .listing-item {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 60px !important;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtcl-price {
+    color: #fff;
+    font-size: 22px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .listing-thumb {
+    line-height: 0;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .item-content {
+    padding: 20px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtcl-listing-meta-data {
+    margin-bottom: 0;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .category {
+    margin-bottom: 7px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtcl-short-description {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: calc(100% + 2px);
+    height: 50px;
+    margin-bottom: 0;
+    margin-left: -1px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom.has-author {
+    height: 60px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom.has-author .action-btn {
+    height: 60px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom.has-author .rtcl-sv-sign {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 0;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom.has-author .rtcl-sv-sign .rtcl-icon-ok-circled:before {
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom.has-author .verified-text {
+    display: none;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn:hover {
+    overflow: inherit;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn:first-child a {
+    border-left: none;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn:last-child a {
+    border-right: none;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn a {
+    color: var(--meta-color);
+    font-size: 16px;
+    margin-left: -1px;
+    padding: 15px;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn a:hover {
+    color: var(--rtcl-primary-color);
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn a:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .action-btn.item-author a {
+    padding: 1px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .item-img {
+    padding: 8px;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtin-bottom .item-img img {
+    border-radius: 50%;
+}
+
+.rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-5-view .rtcl-icon-spinner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 17px;
+    height: 17px;
+    margin: auto;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .rtcl.rtcl-elementor-widget .rtcl-grid-view.rtcl-style-2-view .listing-thumb a img {
 	height: 100%;
 	object-fit: cover;

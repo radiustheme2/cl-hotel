@@ -4,6 +4,12 @@ Contributors: RadiusTheme
 version: 2.0.0
 
 ChangeLog:
+= 2.2.1.1 ( UNRELEASE ) =
+	Fixed: Listing items and slider widget layout broken by latest Classified Listing card styles.
+	Fixed: Listing grid and slider card styles 2, 3 and 5 missing on Home Two and Three.
+	Fixed: Listing card and slider action button borders missing in Elementor widgets.
+
+= 2.0.0 =
 	Added: All addons support
 	Added: Listing form default
 	Added: Multiple category support

@@ -18,7 +18,7 @@ use RtclPro\Helpers\Fns;
 
 ?>
 
-<div class="rtcl rtcl-listings-sc-wrapper rtcl-elementor-widget">
+<div class="rtcl rtcl-elementor-widget">
 	<div class="rtcl-listings-wrapper">
 		<?php
 		$class  = '';

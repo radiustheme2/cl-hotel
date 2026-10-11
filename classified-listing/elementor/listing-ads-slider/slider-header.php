@@ -51,7 +51,7 @@ if ( isset( $instance['slider_space_between'] ) ) {
 
 ?>
 
-<div class="rtcl rtcl-listings-sc-wrapper rtcl-elementor-widget rtcl-el-slider-wrapper rtcl-listings-slider <?php echo esc_html( $classes ); ?>" style="<?php echo esc_attr( $cssstyle ); ?>">
+<div class="rtcl rtcl-elementor-widget rtcl-el-slider-wrapper rtcl-listings-slider <?php echo esc_html( $classes ); ?>" style="<?php echo esc_attr( $cssstyle ); ?>">
 	<div class="rtcl-listings-wrapper">
 
 		<?php
