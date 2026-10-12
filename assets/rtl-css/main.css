@@ -4325,6 +4325,8 @@ footer ul li {
 	border-radius: 50px;
 	align-items: center;
 	background-color: var(--color-primary);
+	flex-shrink: 0;
+	white-space: nowrap;
 }
 
 .product-box .meta-wrap .meta-price .rtcl-price {
@@ -4332,6 +4334,7 @@ footer ul li {
 	font-weight: 700;
 	color: #fff;
 	display: inline-flex;
+	flex-wrap: nowrap;
 }
 
 .product-box .meta-wrap .meta-price .rtcl-price .rtcl-price-amount bdi {
@@ -4341,6 +4344,7 @@ footer ul li {
 
 .product-box .meta-wrap .meta-price .rtcl-price-meta {
 	display: flex;
+	flex-wrap: nowrap;
 	font-size: 14px;
 	font-weight: 300;
 	color: #fff;
@@ -4818,6 +4822,71 @@ footer ul li {
 	top: 41px !important;
 }
 
+/* Listing actions bar on phones: result count on top, sort select and view buttons on one row */
+@media screen and (max-width: 767px) {
+	.rtcl .rtcl-listings-actions {
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 12px 10px;
+		padding: 14px 16px;
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-result-count {
+		flex: 0 0 100%;
+		margin: 0;
+		padding-bottom: 12px;
+		font-size: 15px;
+		border-bottom: 1px solid #E0E3E7;
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-ordering {
+		flex: 1 1 0;
+		min-width: 0;
+		margin: 0;
+	}
+
+	/* Kept for screen readers; the select already shows the chosen sort */
+	.rtcl .rtcl-listings-actions .rtcl-ordering .order-label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-ordering .select2-container {
+		flex: 1 1 auto;
+		min-width: 0;
+		width: auto !important;
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-ordering .select2-container--default .select2-selection--single {
+		border: 1px solid #E0E3E7;
+		border-radius: 4px;
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-ordering .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered {
+		display: block;
+		height: 38px !important;
+		line-height: 38px !important;
+		padding-inline-start: 12px;
+		padding-inline-end: 28px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-ordering .select2-selection__arrow {
+		top: 0 !important;
+		height: 38px !important;
+	}
+
+	.rtcl .rtcl-listings-actions .rtcl-view-switcher {
+		flex: none;
+		margin: 0;
+	}
+}
+
 .rtcl .rtcl-listings {
 	margin-bottom: 0;
 }
@@ -4867,7 +4936,7 @@ footer ul li {
 	border: 1px solid #E0E3E7;
 }
 
-@media (max-width: 1319px) {
+@media (max-width: 767px) {
 	.rtcl .rtcl-list-view .listing-item {
 		justify-content: center;
 	}
@@ -4878,7 +4947,7 @@ footer ul li {
 	align-items: center;
 }
 
-@media (max-width: 1319px) {
+@media (max-width: 767px) {
 	.rtcl .rtcl-list-view .listing-item .product-box {
 		flex-flow: column;
 		width: 100%;
@@ -4909,13 +4978,13 @@ footer ul li {
 	display: none;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 	.rtcl .rtcl-list-view .listing-item .product-box .image-meta-wrap .item-img .listing-thumb {
 		width: 100%;
 	}
 }
 
-@media (min-width: 1320px) {
+@media (min-width: 768px) {
 	.rtcl .rtcl-list-view .listing-item .product-box .image-meta-wrap .item-img .item-poster-info {
 		top: 50%;
 		left: -64px;
@@ -4963,7 +5032,7 @@ footer ul li {
 	word-break: break-word;
 }
 
-@media (max-width: 1319px) {
+@media (max-width: 767px) {
 	.rtcl .rtcl-list-view .listing-item .product-box .item-content {
 		padding: 0;
 		width: 100%;
@@ -5116,9 +5185,21 @@ footer ul li {
 	margin-bottom: 0;
 }
 
-.rtcl .rtcl-listings .listing-item.is-featured,
+/* Promoted listing backgrounds, coloured by Classified Listing style settings. Top comes last so it wins */
+.rtcl .rtcl-listings .listing-item.is-popular {
+	background-color: var(--rtcl-card-popular-bg, #fff6f7);
+}
+
+.rtcl .rtcl-listings .listing-item.is-bump-up {
+	background-color: var(--rtcl-card-bump-up-bg, #f2f9fe);
+}
+
+.rtcl .rtcl-listings .listing-item.is-featured {
+	background-color: var(--rtcl-card-featured-bg, #fffbf5);
+}
+
 .rtcl .rtcl-listings .listing-item.as-top {
-	background-color: #fff;
+	background-color: var(--rtcl-card-top-bg, #dff0f3);
 }
 
 #logoutModalCenter .modal-title {
@@ -6240,6 +6321,46 @@ footer ul li {
 	grid-template-columns: repeat(1, 1fr);
 }
 
+/* Custom field sections (Amenities etc.) styled like the other listing detail boxes */
+.rtcl-single-custom-fields .rtcl-cf-properties {
+	row-gap: 30px;
+}
+
+.rtcl-single-custom-fields .rtcl-cf-properties > .rtcl-cfp-item.rtcl-cfp-wide {
+	gap: 0;
+	padding: 25px 30px 30px;
+	border-radius: 8px;
+	background-color: #fff;
+	border: 1px solid #E0E3E7;
+}
+
+.rtcl-single-custom-fields .rtcl-cf-properties > .rtcl-cfp-item.rtcl-cfp-wide > .rtcl-cfp-label-wrap {
+	margin: 0 0 20px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #E0E3E7;
+}
+
+.rtcl-single-custom-fields .rtcl-cf-properties > .rtcl-cfp-item.rtcl-cfp-wide > .rtcl-cfp-label-wrap .cfp-label {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.5;
+	color: var(--color-heading);
+}
+
+.rtcl-single-custom-fields .rtcl-cf-properties > .rtcl-cfp-checkbox > .cfp-value {
+	gap: 14px 28px;
+}
+
+.rtcl-single-custom-fields .rtcl-cf-properties > .rtcl-cfp-checkbox .rtcl-cfp-vi {
+	font-weight: 500;
+	color: var(--color-body);
+}
+
+/* FAQ repeater is shown by the theme's own Questions & Answers section */
+.rtcl-single-custom-fields .rtcl-cf-properties > .rtcl-cfp-item[data-name="faq_list"] {
+	display: none;
+}
+
 .rtcl-cf-properties .rtcl-cfp-item {
 	border: 1px solid #E0E3E7 !important;
 }
@@ -6528,6 +6649,10 @@ footer ul li {
 	background-color: transparent;
 }
 
+.rtrs-review-wrap .rtrs-review-form {
+	box-shadow: none;
+}
+
 .rtrs-review-form .rtrs-form-title {
 	color: var(--color-heading);
 }
@@ -6562,7 +6687,7 @@ footer ul li {
 }
 
 .rtrs-review-form .rtrs-multimedia-upload .rtrs-upload-box {
-	height: 60px;
+	height: 48px;
 	padding: 10px;
 	border-radius: 6px;
 	border-style: dashed;
@@ -7620,6 +7745,108 @@ footer ul li {
 	padding: 25px 30px 30px;
 	background-color: #fff;
 	border: 1px solid #E0E3E7;
+}
+
+/* Ajax filter: the plugin pads each section, so the widget box and heading drop the theme's own padding */
+.listing-sidebar .widget.rtcl-widget-ajax-filter-class {
+	padding: 0;
+	overflow: hidden;
+}
+
+.listing-sidebar .rtcl-widget-ajax-filter-class .rtcl-widget-heading {
+	padding: 0;
+}
+
+.listing-sidebar .widget.rtcl-widget-ajax-filter-class .rtcl-widget-heading h3 {
+	margin: 0;
+	padding: 20px 24px;
+	border-bottom: 1px solid #E0E3E7;
+}
+
+.rtcl-ajax-filter-item .rtcl-filter-title-wrap .rtcl-icon {
+	color: currentColor;
+	background: none;
+	border: 0;
+}
+
+/* On phones the Ajax Filter shows its own "Show Filter" bar, so drop the theme toggle */
+@media all and (max-width: 767px) {
+	.has-ajax-filter a#toggle-listing-sidebar {
+		display: none;
+	}
+
+	.has-ajax-filter .listing-archive-sidebar {
+		display: block;
+	}
+
+	.has-ajax-filter .rtcl-ajax-filter-floating-mobile {
+		margin-bottom: 24px;
+	}
+}
+
+/* Single listing: below 1400px a 25% sidebar gets too narrow, so give it a fixed width */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+	.listingDetails-content .row > .listing-content.col-lg-9 {
+		flex: 1 1 0;
+		width: auto;
+		max-width: none;
+		min-width: 0;
+	}
+
+	.listingDetails-content .row > .listing-content.col-lg-9 + .col-lg-3 {
+		flex: 0 0 340px;
+		width: 340px;
+		max-width: 340px;
+	}
+}
+
+/* The widget box already has padding, so the title needs none of its own */
+.rtcl .listing-sidebar:not(.rtcl-single-modern .listing-sidebar) .rtcl-listing-side-title {
+	padding: 0 0 16px;
+}
+
+.listing-sidebar .rtcl-listing-user-info a,
+.listing-sidebar .rtcl-listing-user-info .list-group-item {
+	overflow-wrap: anywhere;
+}
+
+.listing-sidebar .business-hours-widget .time-wrapper {
+	white-space: nowrap;
+}
+
+/* My Account: every page's content sits in the same card as My Listings */
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-MyAccount-content-inner,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .radius-booking,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > #rtcl-store-content-wrap,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-favourite-listings,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-chat-content-wrapper,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-payment-history-wrap,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-my-booking-wrap {
+	padding: 24px;
+	border: 1px solid #ECEEF3;
+	border-radius: 16px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+
+/* Empty-state messages already sit inside that card, so they drop their own box */
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-favourite-listings > .rtcl-no-data-found,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-payment-history-wrap > .rtcl-no-data-found,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-my-booking-wrap > .not-found,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-chat-content-wrapper > .rtcl-no-data-found,
+body.rtcl-account.page-template-default .rtcl-MyAccount-wrap .rtcl-MyAccount-content > .rtcl-chat-content-wrapper #rtcl-user-chat-wrap > .rtcl-no-data-found {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+}
+
+/* Account Details: fields are full width, so the submit button drops its old label-column offset */
+.rtcl-EditAccountForm .form-group.row > .offset-sm-3 {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .listing-sidebar .widget img {
@@ -11542,4 +11769,42 @@ h3.fluentform-widget-title:after {
 .contact-us-form .fluentform .ff-el-group.ff_submit_btn_wrapper .ff-btn-submit:hover {
 	opacity: 1;
 	background-color: var(--color-secondary-dark);
+}
+
+/*=======================================================================
+= Membership checkout package cards
+=========================================================================*/
+/* Classified Listing only prints --rtcl-primary-rgb when a primary colour is saved in its
+   Style settings; without it every rgba(var(--rtcl-primary-rgb), ...) rule is dropped.
+   :where() keeps this at zero specificity, so the plugin's own value always wins. */
+:where(:root) {
+	--rtcl-primary-rgb: 50, 50, 255;
+}
+
+#rtcl-checkout-pricing-option .rtcl-checkout-pricing-wrapper > div {
+	display: flex;
+}
+
+#rtcl-checkout-pricing-option div.rtcl-checkout-pricing {
+	width: 100%;
+}
+
+#rtcl-checkout-pricing-option .rtcl-pricing-price {
+	margin-bottom: 0;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ECEEF3;
+}
+
+#rtcl-checkout-pricing-option div.rtcl-checkout-pricing:has(input:checked) {
+	border-color: var(--rtcl-primary-color);
+	box-shadow: 0 0 0 1px var(--rtcl-primary-color), 0 12px 32px -14px rgba(var(--rtcl-primary-rgb), 0.35);
+}
+
+/* Store settings: Update Store button uses the theme primary instead of Classified Listing's default green */
+.rtcl-store-settings .rtcl-btn.rtcl-btn-primary {
+	--rtcl-button-bg-color: var(--color-primary);
+	--rtcl-button-color: #fff;
+	--rtcl-button-hover-bg-color: var(--color-secondary-dark);
+	--rtcl-button-hover-color: #fff;
+	border: 0;
 }
