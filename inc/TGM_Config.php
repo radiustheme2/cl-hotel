@@ -66,30 +66,30 @@ class TGM_Config {
 			$plugins[] = [
 				'name'         => esc_html__('CL Hotel Core','cl-hotel'),
 				'slug'         => 'cl-hotel-core',
-				'source'       => 'cl-hotel-core.2.2.0.zip',
+				'source'       => 'cl-hotel-core.zip',
 				'required'     =>  true,
-				'version'      => '2.2.0',
+				'version'      => '2.2.1',
 			];
 			$plugins[] = [
 				'name'         => esc_html__('RT Framework','cl-hotel'),
 				'slug'         => 'rt-framework',
-				'source'       => 'rt-framework-2.9.1.zip',
+				'source'       => 'rt-framework.zip',
 				'required'     =>  true,
 				'version'      => '2.9.1',
 			];
 			$plugins[] = [
 				'name'         => esc_html__('Classified Listing Pro', 'cl-hotel'),
 				'slug'         => 'classified-listing-pro',
-				'source'       => 'classified-listing-pro.4.2.5.zip',
+				'source'       => 'classified-listing-pro.zip',
 				'required'     =>  true,
-				'version'      => '4.2.5',
+				'version'      => '4.3.0',
 			];
 			$plugins[] = [
 				'name'         => 'Classified Listing Store',
 				'slug'         => 'classified-listing-store',
-				'source'       => 'classified-listing-store.3.2.1.zip',
+				'source'       => 'classified-listing-store.zip',
 				'required'     =>  true,
-				'version'      => '3.2.1',
+				'version'      => '3.2.3',
 			];
 			$plugins[] = [
 				'name'     => 'Classified Listing – Real Estate Agent Addon',
@@ -101,16 +101,16 @@ class TGM_Config {
 			$plugins[] = [
 				'name'         => 'Booking',
 				'slug'         => 'rtcl-booking',
-				'source'       => 'rtcl-booking.3.1.1.zip',
+				'source'       => 'rtcl-booking.zip',
 				'required'     =>  false,
 				'version'      => '3.1.1',
 			];
 			$plugins[] = [
 				'name'         => esc_html__('Review Schema Pro', 'cl-hotel'),
 				'slug'         => 'review-schema-pro',
-				'source'       => 'review-schema-pro.2.0.1.zip',
+				'source'       => 'review-schema-pro.zip',
 				'required'     =>  false,
-				'version'      => '2.0.1',
+				'version'      => '2.1.2',
 			];
 
 		$config = array(
