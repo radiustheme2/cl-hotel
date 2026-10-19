@@ -151,7 +151,7 @@ $abuse = Functions::get_option_item( 'rtcl_single_listing_settings', 'has_report
                             <?php endif; ?>
                         </li>
                     <?php } ?>
-                    <li><a href="#" onclick="window.print();"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="<?php esc_attr_e( "Print", "cl-hotel" ) ?>"><i class="fa-solid fa-print"></i></a></li>
+                    <li><a href="#" onclick="window.print();"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="<?php esc_attr_e( "Print", "cl-hotel" ) ?>"><svg class="listing-print-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><path d="M7 14h10a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1z"/></svg></a></li>
                     <?php if ( function_exists( 'rtclClaimListing' ) && ClaimFunctions::claim_listing_enable() ){ ?>
                     <li class='report-abuse-li' data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="<?php esc_attr_e( "Claim", "cl-hotel" ) ?>">
 		                <?php if ( is_user_logged_in() ): ?>

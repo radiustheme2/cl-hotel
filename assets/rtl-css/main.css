@@ -11800,6 +11800,39 @@ h3.fluentform-widget-title:after {
 	box-shadow: 0 0 0 1px var(--rtcl-primary-color), 0 12px 32px -14px rgba(var(--rtcl-primary-rgb), 0.35);
 }
 
+/* Add Listing: highlighted call to action with the theme primary background */
+body.rtcl-account:not(.page-template-rtcl-canvas_template) .rtcl-MyAccount-wrap .rtcl-MyAccount-navigation ul li.rtcl-MyAccount-navigation-link.rtcl-MyAccount-navigation-link--add-listing a {
+	color: #ffffff;
+	background: var(--color-primary);
+}
+
+body.rtcl-account:not(.page-template-rtcl-canvas_template) .rtcl-MyAccount-wrap .rtcl-MyAccount-navigation ul li.rtcl-MyAccount-navigation-link.rtcl-MyAccount-navigation-link--add-listing a:hover {
+	color: #ffffff;
+	background: var(--color-secondary-dark);
+}
+
+body.rtcl-account:not(.page-template-rtcl-canvas_template) .rtcl-MyAccount-wrap .rtcl-MyAccount-navigation ul li.rtcl-MyAccount-navigation-link.rtcl-MyAccount-navigation-link--add-listing a:before,
+body.rtcl-account:not(.page-template-rtcl-canvas_template) .rtcl-MyAccount-wrap .rtcl-MyAccount-navigation ul li.rtcl-MyAccount-navigation-link.rtcl-MyAccount-navigation-link--add-listing a:hover:before {
+	background-color: #ffffff;
+}
+
+/* Privacy settings: Update Settings button uses the theme primary instead of Classified Listing's default green */
+.rtcl-MyAccount-wrap .rtcl-MyAccount-content .rtcl-profile-settings-form .rtcl-form-group-submit .rtcl-btn {
+	--rtcl-button-bg-color: var(--color-primary);
+	--rtcl-button-color: #fff;
+	--rtcl-button-hover-bg-color: var(--color-secondary-dark);
+	--rtcl-button-hover-color: #fff;
+	border: 0;
+}
+
+/* Checkout: Proceed to payment button uses the theme primary instead of Classified Listing's default color */
+.rtcl-checkout-content .rtcl-submit-btn-wrap #rtcl-checkout-submit-btn {
+	--rtcl-button-bg-color: var(--color-primary);
+	--rtcl-button-color: #fff;
+	--rtcl-button-hover-bg-color: var(--color-secondary-dark);
+	--rtcl-button-hover-color: #fff;
+}
+
 /* Store settings: Update Store button uses the theme primary instead of Classified Listing's default green */
 .rtcl-store-settings .rtcl-btn.rtcl-btn-primary {
 	--rtcl-button-bg-color: var(--color-primary);
